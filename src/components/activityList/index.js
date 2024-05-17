@@ -1,17 +1,20 @@
 import './index.less';
-import React,{Fragment} from 'react';
+import React, { Fragment } from 'react';
 import Item from '../activityItem/index.js';
-export default class ActivityList extends React.Component{
-  render(){
-    const {list}=this.props;
-    return (
-      <Fragment>
+
+export default ActivityList = (props) => {
+  // RC: should use const here or extract list prop at line 5 only
+  let list = props.list;
+
+  // RC: should pass unique key to list item at line 14
+  // Removed unused variables at line number 15
+  return (
+    <Fragment>
       {
-        list.map(function(item,index){
-          return <Item key={item.username}/>
+        list.map(function (item, index) {
+          return <Item />
         })
       }
-      </Fragment>
-    )
-  }
+    </Fragment>
+  )
 }
